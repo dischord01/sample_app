@@ -3,25 +3,21 @@ require 'spec_helper'
 describe User do
 
   before do
-<<<<<<< HEAD
+
     @user = User.new(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
-=======
-    @user = User.new(name: "Example User", email: "user@example.com")
->>>>>>> modeling-users
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
-<<<<<<< HEAD
+
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
-=======
->>>>>>> modeling-users
+
 
   it { should be_valid }
 
@@ -29,26 +25,17 @@ describe User do
     before { @user.name = " " }
     it { should_not be_valid }
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> modeling-users
   describe "when email is not present" do
     before { @user.email = " " }
     it { should_not be_valid }
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> modeling-users
   describe "when name is too long" do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
-<<<<<<< HEAD
-=======
 
->>>>>>> modeling-users
   describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.
@@ -69,7 +56,7 @@ describe User do
       end
     end
   end
-<<<<<<< HEAD
+
  describe "when email address is already taken" do
     before do
       user_with_same_email = @user.dup
@@ -111,7 +98,3 @@ describe User do
     end
   end
 end
-=======
-
-end
->>>>>>> modeling-users
